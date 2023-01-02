@@ -16,7 +16,7 @@ import { useEffect } from 'react';
       
            
     <ImageBackground source={Bike} className="w-full h-full z-3"/>
-    <Text  className="text-black z-1 flex  flex-nowrap self-center items-center ">Vem de Bike</Text>
+   
     
      
      <View className="flex-1 flex-wrap self-center justify-end space-x-5   " >

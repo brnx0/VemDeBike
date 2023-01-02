@@ -20,6 +20,8 @@ export default function Menu(props) {
         </View>
         <View>
         <Bicicletarios text="Estação Campo da Polvora - Salvador" image={EstCampoDaPolvora}/>
+        
+        
         </View>
     </ScrollView>
   );
