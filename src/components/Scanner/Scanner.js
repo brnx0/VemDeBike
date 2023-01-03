@@ -1,52 +1,74 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
+import { Camera} from 'expo-camera';
 import { BarCodeScanner } from 'expo-barcode-scanner';
-import { View, Text, StyleSheet} from 'react-native';
-
-
+import { View, Text, StyleSheet, Button} from 'react-native';
+import {  } from 'react-native-web';
 
 export default function Scanner(){
-    const [hasPermission, setHasPermission] = useState(null);
-    const [scanned, setScanned] = useState(false);
 
-    useEffect(()=>{
-        (async ()=>{
-            const {status} = await BarCodeScanner.requestPermissionsAsync();
-            setHasPermission (status === 'granted');
-            
-        })();
-        
-        
-    },[] );
+  const [scanned, setScanned] = useState(false);
+  const [permission, requestPermission] = Camera.useCameraPermissions();
 
-    const handleBarCodeScanned = ({type, data}) =>{
-        setScanned(true);
-        alert(`${type}, ${data} `);
-    }
+  if (permission === null) {
+      return (
+      <View>
+        <Text>Requesting for camera permission</Text>
+        <Button onPress={requestPermission} title="Conceder permissão"/>
+      </View>
+      )
+  };
 
-    if (hasPermission === null) {
-        return <Text>Requesting for camera permission</Text>;
-    }
-      if (hasPermission === false) {
-        return <Text>No access to camera</Text>;
-    }
+  if (permission === false) {
     return (
-       <View>
-        <BarCodeScanner  onBarCodeScanned={scanned ? undefined: handleBarCodeScanned}/>
-       </View>
-        
-             
-       
-       
+      <View>
+        <Text>No access to camera</Text>
+        <Button onPress={requestPermission} title="Conceder permissão"/>
+      </View>
+    )
+  };
+  
+ const handleBarCodeScanned = ({type, data}) =>{
+    alert(`${type}, ${data} `);
+    return setScanned(false);
+  }
 
-    );
-   
-    
-
+      
+  return (
+    <View style={styles.container}>
+      <Camera 
+        style={styles.camera} 
+        barCodeScannerSettings={{
+        barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],}}
+        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}>
+      </Camera>
+    </View>
+  )
 }
+
+
 const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent:'center'
-    }
+  container:{
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent:'center'
+  }, 
+  camera: {
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    margin: 64,
+  },
+  button: {
+    flex: 1,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'white',
+  },
 })

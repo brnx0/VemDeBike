@@ -20,7 +20,7 @@ export default function Menu(props) {
         </View>
         <View>
         <Bicicletarios text="Estação Campo da Polvora - Salvador" image={EstCampoDaPolvora}/>
-        
+        <Button title="Toque" onPress = { ()=> {props.navigation.navigate('Scanner')}}> </Button>
         
         </View>
     </ScrollView>
