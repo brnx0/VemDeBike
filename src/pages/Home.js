@@ -10,7 +10,6 @@ import { useEffect } from 'react';
  
    
   return (
- 
    
     <View className="w-full h-full z-2">
       

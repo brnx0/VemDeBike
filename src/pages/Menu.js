@@ -14,14 +14,15 @@ export default function Menu(props) {
     <ScrollView>
         <View>
         <Bicicletarios text="Estação Pernambues - Salvador" image={EstPernambues}/>
+        <Button title="Localizar" onPress={ ()=> {props.navigation.navigate('Mapa')}}/>
         </View>
         <View>
         <Bicicletarios text="Estação Imbui - Salvador" image={EstImbui}/>
+        <Button title="Localizar" onPress={ ()=> {props.navigation.navigate('Mapa')}}/>
         </View>
         <View>
         <Bicicletarios text="Estação Campo da Polvora - Salvador" image={EstCampoDaPolvora}/>
-        <Button title="Toque" onPress = { ()=> {props.navigation.navigate('Scanner')}}> </Button>
-        
+        <Button title="Localizar" onPress={ ()=> {props.navigation.navigate('Mapa')}}/>
         </View>
     </ScrollView>
   );

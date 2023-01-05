@@ -4,9 +4,9 @@ import { Button, StyleSheet, Text, TextInput, View,TouchableOpacity } from 'reac
 
 
 export default function Login(props) {
-    const [nome, setnome] = useState('');
-    const [email, setemail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [nome, setNome] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [senha, setSenha] = useState(null);
   
     const cadastro = () =>{
         alert('funcionando');
@@ -15,12 +15,11 @@ export default function Login(props) {
     return (
   
       <View style={styles.container}>
-        <StatusBar hidden />
         
         <Text style={styles.cadastro}>Registre-se</Text>
         
         <TextInput placeholder="Digite seu nome:" style={styles.textInput} onChangeText={text=>setNome(text)}></TextInput>
-      <TextInput placeholder="Digite seu email:" style={styles.textInput} onChangeText={text=>setemail(text)}></TextInput>
+      <TextInput placeholder="Digite seu email:" style={styles.textInput} onChangeText={text=>setEmail(text)}></TextInput>
       <TextInput  secureTextEntry={true} placeholder="Digite sua senha:" style={styles.textInput} onChangeText={text=>setSenha(text)}></TextInput>
   
       <TouchableOpacity style={styles.btnCadastro}  onPress={()=> cadastro()}>

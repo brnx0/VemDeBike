@@ -12,7 +12,7 @@ export default function LeitorQr(props) {
         title="Home"
         onPress = {()=> {props.navigation.navigate('Home')}}
         />
-        <Button title="Ler QrCode" onPress = { ()=> {props.navigation.navigate('Scanner')}}> </Button>
+        <Button title="Usar bicicletario" onPress={ ()=> {props.navigation.navigate('LeitorQr')}}/>
     </View>
   );
 }

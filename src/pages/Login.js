@@ -12,7 +12,7 @@ export default function Login(props) {
             if(email=='teste@gmail.com')
             alert('funcionando');
         } catch (error) {
-            alert('Usuario invalido')
+            alert('Usuario invalido', error)
         }
     }
   return (
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
       backgroundColor:'white',
       //para colocar a barra mais arrendodada
       borderRadius:20,
-      //para colocar o aliamento da barra 
+      //para colocar o alinhamento da barra 
       paddingLeft:10,
       //a margem entre a barra e o nome cadastro
       marginTop:10,
