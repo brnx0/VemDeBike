@@ -1,36 +1,28 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Camera} from 'expo-camera';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { View, Text, StyleSheet, Button} from 'react-native';
-import {  } from 'react-native-web';
+
 
 export default function Scanner(){
 
   const [scanned, setScanned] = useState(false);
-  const [permission, requestPermission] = Camera.useCameraPermissions();
+  const [hasPermission, setHasPermission] = useState(null);
 
-  if (permission === null) {
-      return (
-      <View>
-        <Text>Requesting for camera permission</Text>
-        <Button onPress={requestPermission} title="Conceder permissão"/>
-      </View>
-      )
-  };
-
-  if (permission === false) {
-    return (
-      <View>
-        <Text>No access to camera</Text>
-        <Button onPress={requestPermission} title="Conceder permissão"/>
-      </View>
-    )
+  if (hasPermission === null) {
+    setHasPermission ('granted');
+   }
+     
+     
+  
+  if (hasPermission === false) {
+    setHasPermission ('granted');
   };
   
  const handleBarCodeScanned = ({type, data}) =>{
     alert(`${type}, ${data} `);
     return setScanned(false);
-  }
+  };
 
       
   return (
