@@ -19,7 +19,7 @@ import { useEffect } from 'react';
     
      
      <View className="flex-1 flex-wrap self-center justify-end space-x-5   " >
-         <Pressable   onPress = { ()=> {props.navigation.navigate('Menu')}} className=" self-center justify-center border-solid border-2 w-32 h-14 bg-white border-black rounded-md  mb-2 ">
+         <Pressable   onPress = { ()=> {props.navigation.navigate('Login')}} className=" self-center justify-center border-solid border-2 w-32 h-14 bg-white border-black rounded-md  mb-2 ">
              <Text className="text-center">Login</Text>
          </Pressable>
          <Pressable   onPress = { ()=> {props.navigation.navigate('Register')}} className="items-center justify-center border-solid border-1 w-32 h-14 bg-black rounded-md border-white mb-2  ">

@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, TextInput, View,TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default function Login(props) {
@@ -18,21 +19,15 @@ export default function Login(props) {
   return (
 
 
-    <View style={styles.container}>
+    <LinearGradient style={styles.container} colors={["#FFFFFF", "#36DA64" ]}>
         
-    <Text style={styles.cadastro}>Fazer Login</Text>
-      
+      <Text style={styles.cadastro}> Login</Text>
       <TextInput placeholder="Digite seu email:" style={styles.textInput} onChangeText={text=>setEmail(text)}></TextInput>
       <TextInput  secureTextEntry={true} placeholder="Digite sua senha:" style={styles.textInput} onChangeText={text=>setSenha(text)}></TextInput>
-  
-      <TouchableOpacity style={styles.btnCadastro}  onPress={()=> cadastro()}>
+      <TouchableOpacity style={styles.btnCadastro}  onPress={()=> {props.navigation.navigate('Menu')}}>
         <Text style={{color: 'white', textAlign:'center'}}>ENTRAR</Text>
       </TouchableOpacity>
-        <Button
-        title="Voltar"
-        onPress = { ()=> {props.navigation.navigate('Home')}}
-        />
-    </View>
+    </LinearGradient>
   );
 }
 

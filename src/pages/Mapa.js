@@ -24,4 +24,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  container: {
+    flex: 1,
+    alignleft:40,
+    padding:20
+    
+  }
 });

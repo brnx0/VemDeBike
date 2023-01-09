@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, TextInput, View,TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default function Login(props) {
@@ -13,30 +14,28 @@ export default function Login(props) {
     }
   
     return (
-  
-      <View style={styles.container}>
-        
+      <LinearGradient style={styles.container} colors={["#FFFFFF", "#36DA64" ]}>        
         <Text style={styles.cadastro}>Registre-se</Text>
-        
         <TextInput placeholder="Digite seu nome:" style={styles.textInput} onChangeText={text=>setNome(text)}></TextInput>
-      <TextInput placeholder="Digite seu email:" style={styles.textInput} onChangeText={text=>setEmail(text)}></TextInput>
-      <TextInput  secureTextEntry={true} placeholder="Digite sua senha:" style={styles.textInput} onChangeText={text=>setSenha(text)}></TextInput>
+        <TextInput placeholder="Digite seu email:" style={styles.textInput} onChangeText={text=>setEmail(text)}></TextInput>
+        <TextInput  secureTextEntry={true} placeholder="Digite sua senha:" style={styles.textInput} onChangeText={text=>setSenha(text)}></TextInput>
   
-      <TouchableOpacity style={styles.btnCadastro}  onPress={()=> cadastro()}>
-        <Text style={{color: 'white', textAlign:'center'}}>Cadastrar</Text>
-      </TouchableOpacity>
-        <Button
-        title="Voltar"
-        onPress = { ()=> {props.navigation.navigate('Home')}}
-        />
-    </View>
+        <TouchableOpacity style={styles.btnCadastro}  onPress={()=> cadastro()}>
+          <Text style={{color: 'white', textAlign:'center'}}>Cadastrar</Text>
+        </TouchableOpacity >
+        <TouchableOpacity style={styles.btnCadastro}
+          title="Voltar"
+          onPress = { ()=> {props.navigation.navigate('Home')}}>
+          <Text style={{color: 'white', textAlign:'center'}}>Voltar</Text>
+        </TouchableOpacity >
+      </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#6495ED',
+     backgroundColor: '#5880218',
       alignleft:40,
       padding:20
       
