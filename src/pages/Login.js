@@ -19,9 +19,15 @@ export default function Login(props) {
   return (
 
 
-    <LinearGradient style={styles.container} colors={["#FFFFFF", "#36DA64" ]}>
+    <LinearGradient style={styles.container} colors={["#87CEEB", "#4682B4" ]}>
         
-      <Text style={styles.cadastro}> Login</Text>
+      <Text 
+        style={{
+        color: 'black',
+        fontSize: 64,
+
+        marginTop: 20,
+       }}> Login</Text>
       <TextInput placeholder="Digite seu email:" style={styles.textInput} onChangeText={text=>setEmail(text)}></TextInput>
       <TextInput  secureTextEntry={true} placeholder="Digite sua senha:" style={styles.textInput} onChangeText={text=>setSenha(text)}></TextInput>
       <TouchableOpacity style={styles.btnCadastro}  onPress={()=> {props.navigation.navigate('Menu')}}>
@@ -35,14 +41,15 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#6495ED',
-      alignleft:40,
-      padding:20
+      alignItems:'center',
+      justifyContent:'center'
       
     },
     textInput:{
-      width:'100%',
+      width:'80%',
       height:40,
       backgroundColor:'white',
+      borderColor:'black',
       //para colocar a barra mais arrendodada
       borderRadius:20,
       //para colocar o alinhamento da barra 
@@ -52,9 +59,9 @@ const styles = StyleSheet.create({
       marginBottom:5
     },
     btnCadastro: {
-      width:'100%',
+      width:'50%',
       height:40,
-      backgroundColor:'#000000',
+      backgroundColor:'black',
       borderRadius:20,
       justifyContent:'center',
       marginTop:5

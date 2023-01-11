@@ -9,8 +9,7 @@ var {
 
 
 export default function Bicicletarios(props) {
-    let vagas = 10
-    console.log(width);
+
     return(
         <View style={styles.container}>
             <Text>Vagas:{vagas} </Text>
@@ -26,12 +25,13 @@ const styles=StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+
       },
     image: {
         justifyContent: 'center',
         alignSelf: 'center',
         alignItems: 'center',
-        width: 400,
+        width: 100,
         height:300
     }
 })
