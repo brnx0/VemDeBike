@@ -40,7 +40,7 @@ export default function Scanner(){
   return (
     <View style={styles.container}>
       <Camera style={styles.camera} type={type}  barCodeScannerSettings={{
-    barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],}}onBarCodeScanned={scanned ? limpar : handleBarCodeScanned}>
+        barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],}}onBarCodeScanned={scanned ? limpar : handleBarCodeScanned}>
        
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
