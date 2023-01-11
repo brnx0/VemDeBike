@@ -10,7 +10,7 @@ export default function Login(props) {
     const [senha, setSenha] = useState(null);
   
     const cadastro = () =>{
-        alert('funcionando');
+        alert('Usuario registrado');
     }
   
     return (

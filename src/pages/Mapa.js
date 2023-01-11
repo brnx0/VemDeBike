@@ -20,17 +20,19 @@ export default function LeitorQr({route} ) {
         <Text style={styles.titulo}>{route.params?.titulo}</Text>
         <WebView   // Mapa
    source={{html: `<iframe src=${route.params?.link} width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`}}
-   style={{marginTop: 20, height:600, width:800}} 
+   style={styles.mapa} 
 >
   {/* <TouchableOpacity onPress> AINDA FALTA FINALIZAR ISSO AQUI,
 
   </TouchableOpacity> */}
 </WebView> 
+        <View>
+          <Text></Text>
+        </View>
         <View style={styles.botao}>
-         
           <Button title="Usar bicicletario" onPress={ ()=> {navigation.navigate('Scanner')}}/>
         </View>
-        
+
     </View>
     </ImageBackground>
   );
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignleft:40,
-    padding:20
+    padding:20,
     
   },
   titulo:{
@@ -82,6 +84,13 @@ elevation: 24,
     fontSize: 20,
     fontWeight: 'bold'
     
+  },
+  mapa:{
+    flex:1,
+    marginTop: 20, 
+    height:60, 
+    width:800,
+
   }
 
 

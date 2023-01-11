@@ -12,8 +12,8 @@ export default function Bicicletarios(props) {
 
     return(
         <View style={styles.container}>
-            <Text>Vagas:{vagas} </Text>
             <Text>{props.text}</Text>
+            <Text style={styles.text}>Vagas:{vagas} </Text>
             <Image style={styles.image} source={props.image}/>
         </View>
     )
@@ -27,6 +27,10 @@ const styles=StyleSheet.create({
         justifyContent: 'center',
 
       },
+      text:{
+        color:'white',
+        fontSize:20
+      },
     image: {
         justifyContent: 'center',
         alignSelf: 'center',
@@ -35,3 +39,4 @@ const styles=StyleSheet.create({
         height:300
     }
 })
+
