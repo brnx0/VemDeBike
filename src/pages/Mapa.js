@@ -19,10 +19,10 @@ export default function LeitorQr({route} ) {
          
         <Text style={styles.titulo}>{route.params?.titulo}</Text>
         <WebView   // Mapa
-   source={{html: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.958333128357!2d-38.51368447144165!3d-12.982509679527663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x61ce2f34156ffe28!2zRXN0YcOnw6NvIE5vdmEgTGFwYQ!5e0!3m2!1spt-BR!2sbr!4v1673358939191!5m2!1spt-BR!2sbr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'}}
-   style={{marginTop: 40, height:600, width:800}} 
+   source={{html: `<iframe src=${route.params?.link} width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`}}
+   style={{marginTop: 20, height:600, width:800}} 
 >
-  {/* <TouchableOpacity onPress> AINDA FALTA FINALIZAR ISSO AQUI, PRA ABRIR O MAPA 
+  {/* <TouchableOpacity onPress> AINDA FALTA FINALIZAR ISSO AQUI,
 
   </TouchableOpacity> */}
 </WebView> 
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     
   },
   titulo:{
+  
     backgroundColor: 'white',
     shadowColor: "#000",
     shadowOffset: {

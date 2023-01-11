@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Camera} from 'expo-camera';
-import { BarCodeScanner } from 'expo-barcode-scanner';
-import { View, Text, StyleSheet, Button} from 'react-native';
+
+import { View,  StyleSheet,} from 'react-native';
 
 
 export default function Scanner(){
@@ -27,11 +27,8 @@ export default function Scanner(){
       
   return (
     <View style={styles.container}>
-      <Camera 
-        style={styles.camera} 
-        barCodeScannerSettings={{
-        barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],}}
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}>
+      <Camera>
+  
       </Camera>
     </View>
   )

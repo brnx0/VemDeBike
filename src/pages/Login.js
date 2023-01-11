@@ -24,7 +24,7 @@ export default function Login(props) {
       <Text 
         style={{
         color: 'black',
-        fontSize: 64,
+        fontSize: 52,
 
         marginTop: 20,
        }}> Login</Text>
