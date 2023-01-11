@@ -14,11 +14,7 @@ import { useEffect } from 'react';
     
     <ImageBackground source={Bike} className="w-full h-full z-3">
    
-    <View className="flex-1 flex-col self-end text-7xl items-center drop-shadow-2xl p-10 shadow-red-900	 ">
-    <Text className=" color-white text-7xl items-center mb-10 shadow-red-900	"> Vem  </Text> 
-    <Text  className=" color-white text-7xl mb-10 shadow"> De </Text>    
-    <Text  className=" color-white text-7xl self-center"> Bike </Text>   
-    </View>
+
     
      
      <View className="flex-1  flex-row self-center justify-around items-end p-5   " >
